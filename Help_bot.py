@@ -5,15 +5,15 @@ def get_questions():
         if quest == 'hello':
             print('How can i help you?')
         elif 'add' in quest:
-            quest = quest[4:]
             quest = quest.split()
+            quest.remove('add')
             try:
                 contact_dict[quest[0].title()] = quest[1]
             except IndexError:
                 print('Give me name and phone please')
         elif 'change' in quest:
-            quest = quest[7:]
             quest = quest.split()
+            quest.remove('change')
             try:
                 contact_dict[quest[0].title()] = quest[1]
             except IndexError:
